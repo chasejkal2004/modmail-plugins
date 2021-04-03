@@ -44,4 +44,4 @@ class MeLogger(commands.Cog):
          await message.author.send(embed=embed)
          await message.author.kick(reason=reason)
 def setup(bot):
-    bot.add_cog(Logger(bot))
+    bot.add_cog(MeLogger(bot))
