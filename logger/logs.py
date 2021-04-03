@@ -13,17 +13,6 @@ class MeLogger(commands.Cog):
         self.bot = bot
         self.db = self.bot.plugin_db.get_partition(self)
 
-    async def log_channel(self):
-        config = await self.db.find_one({'_id': 'config'}) or {}
-        channel_id = config.get('log_channel')
-        if channel_id:
-            return self.bot.get_channel(int(channel_id))
-
-    async def is_ignored(self, channel):
-        config = await self.db.find_one({'_id': 'config'}) or {}
-        ignored = config.get('ignored_channels', [])
-        return str(channel.id) in ignored
-
       @commands.Cog.listener()
       async def on_message(message):
    
