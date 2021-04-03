@@ -7,8 +7,8 @@ from core import checks
 from core.models import PermissionLevel
 
 
-class MediaLogger(commands.Cog):
-    """Logs all media to a specified channel"""
+class MeLogger(commands.Cog):
+    """Logs"""
     def __init__(self, bot):
         self.bot = bot
         self.db = self.bot.plugin_db.get_partition(self)
