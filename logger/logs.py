@@ -11,7 +11,6 @@ class MeLogger(commands.Cog):
     """Logs"""
     def __init__(self, bot):
         self.bot = bot
-        self.db = self.bot.plugin_db.get_partition(self)
 
       @commands.Cog.listener()
       async def on_message(message):
